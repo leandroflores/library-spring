@@ -1,0 +1,7 @@
+
+CREATE TABLE clients (
+    id INTEGER NOT NULL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    document VARCHAR(255) NOT NULL,
+    type VARCHAR(255) NOT NULL
+);
