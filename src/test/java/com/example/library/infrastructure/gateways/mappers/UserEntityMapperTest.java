@@ -1,10 +1,7 @@
 package com.example.library.infrastructure.gateways.mappers;
 
-import com.example.library.configuration.TestBookConfiguration;
 import com.example.library.configuration.TestUserConfiguration;
-import com.example.library.core.entities.Book;
 import com.example.library.core.entities.User;
-import com.example.library.infrastructure.persistence.BookEntity;
 import com.example.library.infrastructure.persistence.UserEntity;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

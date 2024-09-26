@@ -1,6 +1,7 @@
 package com.example.library.configuration;
 
 import com.example.library.core.entities.User;
+import com.example.library.infrastructure.controllers.mappers.UserMapper;
 import com.example.library.infrastructure.dtos.UserDTO;
 import com.example.library.infrastructure.gateways.mappers.UserEntityMapper;
 import com.example.library.infrastructure.persistence.UserEntity;
@@ -8,10 +9,15 @@ import com.example.library.infrastructure.persistence.UserEntity;
 import java.time.LocalDate;
 
 public class TestUserConfiguration {
-    private static final UserEntityMapper USER_ENTITY_MAPPER = new UserEntityMapper();
+    private static final UserMapper MAPPER = new UserMapper();
+    private static final UserEntityMapper ENTITY_MAPPER = new UserEntityMapper();
+
+    public static UserMapper mapper() {
+        return MAPPER;
+    }
 
     public static UserEntityMapper entityMapper() {
-        return USER_ENTITY_MAPPER;
+        return ENTITY_MAPPER;
     }
 
     public static Long userId() {
@@ -50,9 +56,9 @@ public class TestUserConfiguration {
 
     public static UserDTO userDTO() {
         return new UserDTO(
-                "Paul",
-                "paul2@gmail.com",
-                "4499999999"
+                userName(),
+                userEmail(),
+                userPhone()
         );
     }
 }

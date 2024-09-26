@@ -4,23 +4,25 @@ import com.example.library.core.entities.Book;
 import com.example.library.core.entities.Loan;
 import com.example.library.core.entities.User;
 import com.example.library.core.enums.LoanStatus;
+import com.example.library.infrastructure.dtos.LoanCreateDTO;
+import com.example.library.infrastructure.dtos.LoanDTO;
 import com.example.library.infrastructure.gateways.mappers.LoanEntityMapper;
 import com.example.library.infrastructure.persistence.LoanEntity;
 
 import java.time.LocalDate;
 
 public class TestLoanConfiguration {
-    private static final LoanEntityMapper LOAN_ENTITY_MAPPER = new LoanEntityMapper(
+    private static final LoanEntityMapper ENTITY_MAPPER = new LoanEntityMapper(
             TestBookConfiguration.entityMapper(),
             TestUserConfiguration.entityMapper()
     );
 
     public static LoanEntityMapper entityMapper() {
-        return LOAN_ENTITY_MAPPER;
+        return ENTITY_MAPPER;
     }
 
     public static Long loanId() {
-        return 23L;
+        return 1L;
     }
 
     public static LoanStatus loanStatus() {
@@ -62,6 +64,23 @@ public class TestLoanConfiguration {
                 loanReturnDate(),
                 TestUserConfiguration.userEntity(),
                 TestBookConfiguration.bookEntity()
+        );
+    }
+
+    public static LoanCreateDTO loanCreateDTO() {
+        return new LoanCreateDTO(
+                loanUser().getId(),
+                loanBook().getId()
+        );
+    }
+
+    public static LoanDTO loanDTO() {
+        return new LoanDTO(
+                loanStatus(),
+                loanDate(),
+                loanReturnDate(),
+                loanUser().getId(),
+                loanBook().getId()
         );
     }
 }

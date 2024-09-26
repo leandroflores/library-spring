@@ -21,37 +21,37 @@ public class LoanEntityTest {
     }
 
     @Test
-    public void testGetId() throws Exception {
+    public void testGetId() {
         Long id = TestLoanConfiguration.loanId();
         assert loan.getId().equals(id);
     }
 
     @Test
-    public void testGetStatus() throws Exception {
+    public void testGetStatus() {
         LoanStatus status = TestLoanConfiguration.loanStatus();
         assert loan.getStatus().equals(status);
     }
 
     @Test
-    public void testGetLoanDate() throws Exception {
+    public void testGetLoanDate() {
         LocalDate loanDate = TestLoanConfiguration.loanDate();
         assert loan.getLoanDate().equals(loanDate);
     }
 
     @Test
-    public void testGetReturnDate() throws Exception {
+    public void testGetReturnDate() {
         LocalDate returnDate = TestLoanConfiguration.loanReturnDate();
         assert loan.getReturnDate().equals(returnDate);
     }
 
     @Test
-    public void testGetUser() throws Exception {
+    public void testGetUser() {
         User user = TestLoanConfiguration.loanUser();
         assert loan.getUser().getId().equals(user.getId());
     }
 
     @Test
-    public void testGetBook() throws Exception {
+    public void testGetBook() {
         Book book = TestLoanConfiguration.loanBook();
         assert loan.getBook().getId().equals(book.getId());
     }

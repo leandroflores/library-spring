@@ -19,31 +19,31 @@ public class UserEntityTest {
     }
 
     @Test
-    public void testGetId() throws Exception {
+    public void testGetId() {
         Long id = TestUserConfiguration.userId();
         assert user.getId().equals(id);
     }
 
     @Test
-    public void testGetName() throws Exception {
+    public void testGetName() {
         String name = TestUserConfiguration.userName();
         assert user.getName().equals(name);
     }
 
     @Test
-    public void testGetEmail() throws Exception {
+    public void testGetEmail() {
         String email = TestUserConfiguration.userEmail();
         assert user.getEmail().equals(email);
     }
 
     @Test
-    public void testGetPhone() throws Exception {
+    public void testGetPhone() {
         String phone = TestUserConfiguration.userPhone();
         assert user.getPhone().equals(phone);
     }
 
     @Test
-    public void testGetCreatedAt() throws Exception {
+    public void testGetCreatedAt() {
         LocalDate createdAt = TestUserConfiguration.userCreatedAt();
         assert user.getCreatedAt().equals(createdAt);
     }

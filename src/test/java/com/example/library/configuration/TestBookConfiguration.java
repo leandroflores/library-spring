@@ -10,10 +10,15 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class TestBookConfiguration {
-    private static final BookEntityMapper BOOK_ENTITY_MAPPER = new BookEntityMapper();
+    private static final BookMapper MAPPER = new BookMapper();
+    private static final BookEntityMapper ENTITY_MAPPER = new BookEntityMapper();
+
+    public static BookMapper mapper() {
+        return MAPPER;
+    }
 
     public static BookEntityMapper entityMapper() {
-        return BOOK_ENTITY_MAPPER;
+        return ENTITY_MAPPER;
     }
 
     public static Long bookId() {
